@@ -155,15 +155,19 @@ button{font-family:inherit; cursor:pointer;}
 .hero{
   position:relative;
   min-height:100vh;
-  display:flex; align-items:center;
+  display:flex; align-items:center; justify-content:center;
   background:radial-gradient(120% 100% at 15% 0%, var(--navy-800) 0%, var(--navy-900) 45%, var(--navy-950) 100%);
   color:#fff;
   padding:150px 0 110px;
   overflow:hidden;
 }
+.hero .container{width:100%;}
 .hero::before{ /* subtle map texture */
   content:""; position:absolute; inset:0;
-  background:radial-gradient(circle at 85% 30%, rgba(63,169,214,.18), transparent 55%);
+  background:
+    radial-gradient(circle at 85% 30%, rgba(63,169,214,.18), transparent 55%),
+    radial-gradient(circle at 18% 60%, rgba(63,169,214,.14), transparent 45%),
+    radial-gradient(circle at 12% 28%, rgba(184,134,59,.10), transparent 40%);
   pointer-events:none;
 }
 .hero-grid{
@@ -188,9 +192,11 @@ button{font-family:inherit; cursor:pointer;}
 .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-top:34px;}
 
 .trust-row{
-  display:flex; gap:34px; margin-top:56px; flex-wrap:wrap;
-  border-top:1px solid rgba(255,255,255,.14); padding-top:26px;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px 24px;
+  margin-top:56px; padding-top:26px; border-top:1px solid rgba(255,255,255,.14);
 }
+.trust-row .stat{border-inline-start:1px solid rgba(255,255,255,.14); padding-inline-start:20px;}
+.trust-row .stat:first-child{border-inline-start:none; padding-inline-start:0;}
 .trust-row .stat b{
   display:block; font-family:var(--font-display); font-size:1.7rem; color:#fff;
 }
@@ -432,6 +438,11 @@ footer a:hover{color:#fff;}
   .cta-banner{flex-direction:column; text-align:center;}
   .stats-band{grid-template-columns:1fr 1fr; padding:34px 24px;}
   .legal-content{padding:28px;}
+  .hero{padding:120px 0 70px;}
+  .trust-row{gap:14px 16px; margin-top:38px; padding-top:20px;}
+  .trust-row .stat{padding-inline-start:14px;}
+  .trust-row .stat b{font-size:1.35rem;}
+  .trust-row .stat span{font-size:.7rem;}
 }
 
 /* Mobile nav drawer */
