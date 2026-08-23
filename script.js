@@ -1,4 +1,4 @@
-// ============ مؤسسة أبو سلعة لتحلية المياه — سكربت الموقع ============
+// ============ مؤسسة أبو سبعة لتحلية المياه — سكربت الموقع ============
 
 // --- الهيدر الثابت عند التمرير ---
 const header = document.querySelector('.site-header');
@@ -72,7 +72,7 @@ if (contactForm) {
     }
 
     const waNumber = '966504137856'; // ضع رقم واتساب المؤسسة هنا بدون أصفار أو رموز
-    const text = `مرحباً مؤسسة أبو سلعة لتحلية المياه،%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aالتفاصيل: ${encodeURIComponent(message)}`;
+    const text = `مرحباً مؤسسة أبو سبعة لتحلية المياه،%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aالتفاصيل: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
     contactForm.reset();
   });
