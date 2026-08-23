@@ -1,6 +1,5 @@
 // ============ مؤسسة أبو سبعة لتحلية المياه — سكربت الموقع ============
 
-// --- الهيدر الثابت عند التمرير ---
 const header = document.querySelector('.site-header');
 const onScroll = () => {
   if (window.scrollY > 40) header.classList.add('solid');
@@ -9,7 +8,6 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 onScroll();
 
-// --- قائمة الجوال ---
 const navToggle = document.querySelector('.nav-toggle');
 const mobileNav = document.querySelector('.mobile-nav');
 const closeBtn = document.querySelector('.mobile-nav .close-btn');
@@ -21,7 +19,6 @@ if (navToggle && mobileNav) {
   );
 }
 
-// --- ظهور العناصر عند التمرير ---
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -33,7 +30,6 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
 
-// --- عدّاد الإحصائيات ---
 const counters = document.querySelectorAll('[data-count]');
 const countIO = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -71,12 +67,11 @@ if (contactForm) {
       return;
     }
 
-    const waNumber = '966504137856'; // ضع رقم واتساب المؤسسة هنا بدون أصفار أو رموز
+    const waNumber = '966500000000'; // ضع رقم واتساب المؤسسة هنا بدون أصفار أو رموز
     const text = `مرحباً مؤسسة أبو سبعة لتحلية المياه،%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aالتفاصيل: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
     contactForm.reset();
   });
 }
 
-// --- سنة الحقوق تلقائياً ---
 document.querySelectorAll('.js-year').forEach(el => el.textContent = new Date().getFullYear());
