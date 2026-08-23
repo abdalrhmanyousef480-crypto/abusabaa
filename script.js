@@ -54,6 +54,7 @@ counters.forEach(el => countIO.observe(el));
 
 // --- نموذج التواصل: تجهيز رسالة واتساب ---
 const contactForm = document.getElementById('contact-form');
+const isEnglish = document.documentElement.lang === 'en';
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -63,12 +64,14 @@ if (contactForm) {
     const message = document.getElementById('c-message').value.trim();
 
     if (!name || !phone) {
-      alert('الرجاء تعبئة الاسم ورقم الجوال على الأقل.');
+      alert(isEnglish ? 'Please fill in at least your name and phone number.' : 'الرجاء تعبئة الاسم ورقم الجوال على الأقل.');
       return;
     }
 
-    const waNumber = '966500000000'; // ضع رقم واتساب المؤسسة هنا بدون أصفار أو رموز
-    const text = `مرحباً مؤسسة أبو سبعة لتحلية المياه،%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aالتفاصيل: ${encodeURIComponent(message)}`;
+    const waNumber = '966504137856'; // رقم واتساب المؤسسة
+    const text = isEnglish
+      ? `Hello Abu Sab'a Water Desalination,%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService requested: ${encodeURIComponent(service)}%0ADetails: ${encodeURIComponent(message)}`
+      : `مرحباً مؤسسة أبو سبعة لتحلية المياه،%0Aالاسم: ${encodeURIComponent(name)}%0Aالجوال: ${encodeURIComponent(phone)}%0Aالخدمة المطلوبة: ${encodeURIComponent(service)}%0Aالتفاصيل: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/${waNumber}?text=${text}`, '_blank');
     contactForm.reset();
   });
