@@ -241,7 +241,7 @@ section{padding:112px 0;}
   font-family:var(--font-display); font-size:1.2rem; color:var(--gold-300); position:relative; z-index:2;
 }
 .process-step h4{font-size:1.05rem;}
-.process-step p{color:var(--ink-soft); font-size:.92rem;}
+.process-step p{color:var #fff; font-size:.92rem;}
 
 /* ---------- Why us ---------- */
 .why-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
