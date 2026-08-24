@@ -401,3 +401,114 @@ footer a:hover{color:#fff;}
 .mobile-nav.open{transform:translateY(0);}
 .mobile-nav a{color:#fff; font-size:1.35rem; font-family:var(--font-display); font-weight:700;}
 .mobile-nav .close-btn{position:absolute; top:24px; left:24px; background:none; border:none; color:#fff; font-size:2rem;}
+
+/* =========================
+   Back To Top
+========================= */
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(15, 27, 35, 0.92);
+  color: #E4C766;
+
+  border: 1px solid rgba(228, 199, 102, 0.45);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    0 0 0 0 rgba(228, 199, 102, 0.25);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  text-decoration: none;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease,
+    transform 0.35s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 999;
+
+  animation: none;
+}
+
+.back-to-top svg {
+  width: 21px;
+  height: 21px;
+  transition: transform 0.3s ease;
+}
+
+/* يظهر عند النزول */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover */
+.back-to-top:hover {
+  background: #E4C766;
+  color: #0F1B23;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.22),
+    0 0 25px rgba(228, 199, 102, 0.25);
+
+  transform: translateY(-4px);
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* تأثير بسيط عند الظهور */
+.back-to-top.show {
+  animation: topButtonIn 0.45s ease forwards;
+}
+
+@keyframes topButtonIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* الجوال */
+@media (max-width: 768px) {
+  .back-to-top {
+    right: 18px;
+    bottom: 92px;
+
+    width: 46px;
+    height: 46px;
+  }
+
+  .back-to-top svg {
+    width: 19px;
+    height: 19px;
+  }
+}
