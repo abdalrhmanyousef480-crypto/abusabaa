@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.abusabaa-water.sa/sitemap.xml
+Sitemap: https://www.abusabaa.com/sitemap.xml
