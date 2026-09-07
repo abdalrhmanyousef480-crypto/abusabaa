@@ -27,7 +27,7 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0, rootMargin: '0px 0px 15% 0px' });
 revealEls.forEach(el => io.observe(el));
 
 const counters = document.querySelectorAll('[data-count]');
